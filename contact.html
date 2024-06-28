@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bookoo - Online Book Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .centered {
+        display: flex;
+        justify-content: center;
+      }
+      .site-section {
+        position: relative;
+        padding: 2.5em 0;
+        background: url('images/backgroundcontact.jpeg') no-repeat center center/cover;
+      }
+      @media (min-width: 768px) {
+        .site-section {
+          padding: 5em 0;
+        }
+      }
+      .site-section.site-section-sm {
+        padding: 4em 0;
+      }
+
+      .site-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0); /* Adjust the overlay color and opacity */
+        z-index: 1;
+      }
+
+      .site-section .container, 
+      .site-section .row,
+      .site-section .col-md-7,
+      .site-section .col-md-10 {
+        position: relative;
+        z-index: 2;
+      }
+
+      .site-section-heading {
+        font-size: 30px;
+        color: #25262a;
+        position: relative;
+      }
+      .site-section-heading:before {
+        content: "";
+        left: 0%;
+        top: 0;
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: #7971ea;
+      }
+      .site-section-heading.text-center:before {
+        content: "";
+        left: 50%;
+        top: 0;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        background: #7971ea;
+      }
+      .site-section .col-md-7 {
+        background-color: white;
+        padding: 2em; /* Optional: Adjust padding to your needs */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+      }
+      .site-section .col-md-10 {
+        padding: 2em; /* Optional: Adjust padding to your needs */
+        border-radius: 10px; /* Optional: Adds rounded corners */
+        margin-bottom: 2em; /* Optional: Adds spacing between the two sections */
+      }
+      .centered-content {
+        padding: 2em;
+        border-radius: 10px;
+        margin-bottom: 2em;
+      }
+
+      .text-bold-white {
+        color: #000000;
+        font-weight: bold;
+        text-align: center; /* Centers the text */
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .additional-info-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .additional-info {
+        background-color: white;
+        padding: 2em;
+        
+        
+        text-align: left; /* Aligns text to the left */
+      }
+
+      .map-container {
+        display: flex;
+        align-items: center; /* Centers the map vertically */
+        justify-content: center; /* Centers the map horizontally */
+        background-color: white;
+        padding: 2em;
+        
+        
+        text-align: center;
+        height: 400px; /* Ensure the height of the container is enough to display the map */
+      }
+
+      .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        width: 100%;
+      }
+      .map-responsive iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+
+      .info-section {
+        background-color: white;
+        padding: 2.5em 0; /* Adjust padding as needed */
+      }
+
+      @media (min-width: 768px) {
+        .info-section {
+          padding: 5em 0; /* Adjust padding as needed */
+        }
+      }
+
+      /* NAVBAR HOME, ABOUT, CONTACT*/
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .site-navbar {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .site-navbar .site-navbar-top {
+        padding: 20px 0;
+      }
+      
+      .site-navbar .site-logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      
+      .site-navbar .site-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .site-navbar .site-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+      }
+      
+      .site-navbar .site-menu li {
+        display: inline-block; /* Menjadikan menu sejajar */
+        margin-right: 5px; /* Jarak antar menu */
+        position: relative;
+      }
+      
+      .site-navbar .site-menu li a {
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover {
+        color: #555;
+      }
+      
+      .site-navbar .site-menu li.active a,
+      .site-navbar .site-menu li a:active {
+        color: #f00;
+      }
+      
+      .site-navbar .site-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        transition: width 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover::after,
+      .site-navbar .site-menu li.active a::after {
+        width: 100%;
+      }
+      
+      /*NAVBAR STICKY END*/
+      
+
+    /* Efek untuk tautan yang aktif */
+    .menu-link.active::after {
+      width: 100%; /* Panjang garis bawah saat aktif */
+    }
+    </style>
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+
+        <!--Navbar Sticky Start [LOGO, HOME, ABOUT, CONTACT]-->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">E-Bookoo</a>
+            </div>
+          </div>
+          <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <div class="container">
+                <ul class="site-menu js-clone-nav d-none d-md-block">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Navbar End-->
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-10 centered-content">
+                    <h2 class="h3 mb-3 text-bold-white">Contact Us</h2>
+                    <p class="text-bold-white">For new books, magazines and more<br>
+                        Requests for new stationary supply or even book supply</p>
+                </div>
+                <div class="col-md-7">
+                    <form id="contactForm" action="#" method="post">
+                        <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_subject" class="text-black">Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="c_name" name="c_name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_email" class="text-black">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="c_email" name="c_email" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label for="c_message" class="text-black">Message <span class="text-danger">*</span></label>
+                                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <button type="button" id="submitButton" class="btn btn-primary btn-lg btn-block">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+      <div class="container">
+          <div class="row additional-info-container">
+              <div class="col-md-6 additional-info">
+                  <h2 class="h3 mb-3 text-black">More Information</h2>
+                  <p class="text-black">For further inquiries, feel free to reach us on WhatsApp or visit our location using the map below.</p>
+                  <p class="text-black">
+                      <strong>
+                          <a href="https://wa.me/6285641788876" target="_blank" style="text-decoration: none; color: #7971ea;">
+                              <i class="fab fa-whatsapp"></i> +628-123-456-789
+                          </a>
+                      </strong>
+                  </p>
+                  <p class="text-black">
+                      <strong>
+                          <a href="mailto:Kelompok4@mail.com" style="text-decoration: none; color: #7971ea;">
+                              <i class="fas fa-envelope"></i> Ebookoo@gmail.com
+                          </a>
+                      </strong>
+                  </p>
+              </div>
+              <div class="col-md-6 map-container">
+                  <div class="map-responsive">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15811.286804503143!2d110.3189779!3d-7.8086913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1719499920001!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+    <footer class="site-footer border-top" style="background-color: #e8eaec;">
+
+        <div class="footer-box">
+
+            <div class="site-wrap">
+                <header class="site-navbar" role="banner">
+                    <div class="site-navbar-top">
+                        <div class="container">
+                            <div class="row align-items-center">
+
+                                <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                                    <form action="" class="site-block-top-search">
+                                        <div class="site-logo">
+                                            <a href="index.html" class="js-logo-clone">E-BOOKOO</a>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                                        <!-- Navigation Links-->
+                                        <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                                            <ul class="list-unstyled">
+                                                <li><a href="index.html">HOME</a></li>
+                                                <li><a href="about.html">ABOUT</a></li>
+                                                <li><a href="contact.html">CONTACT</a></li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+
+                                <!--Contact Info & Sosial Media Links-->
+                                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                                    <div class="site-top-icons">
+                                        <ul>
+                                            <p><a href="mailto:ebookoo@gmail.com">Ebookoo@gmail.com</a></p>
+                                            <p><a href="https://wa.me/628123456789">+628-123-456-789</a></p>
+                                            <li>
+                                                <a href="https://www.facebook.com/yourpage" class=""><span class="icon-facebook"></span></a>
+                                                <a href="https://www.twitter.com/yourpage" class=""><span class="icon-twitter"></span></a>
+                                                <a href="https://www.instagram.com/yourpage" class=""><span class="icon-instagram"></span></a>
+                                            </li>
+                                        </ul>
+                                    </div> 
+                                </div>  
+                            </div>
+
+                            <!--COPYRIGHT-->
+                            <div class="row pt-5 mt-5 text-center">
+                                <div class="col-md-12">
+                                    <p>
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+
+                                    </script><script>document.write(new Date().getFullYear());</script> All rights reserved | Kelompok 4 - PDW - B <i class="icon-heart" aria-hidden="true"></i> 
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div> 
+                </header>
+            </div>
+        </footer>
+        <!--FOOTER END-->
+    </div>
+
+    <!-- SweetAlert JavaScript -->
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+      document.getElementById('submitButton').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the form from submitting
+  
+          var name = document.getElementById('c_name').value;
+          var email = document.getElementById('c_email').value;
+          var message = document.getElementById('c_message').value;
+  
+          // Display the data in an alert popup
+          alert('Form Data\n\n' +
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Message: ' + message);
+  
+          // Clear the form fields after the alert is dismissed
+          document.getElementById('c_name').value = '';
+          document.getElementById('c_email').value = '';
+          document.getElementById('c_message').value = '';
+      });
+  </script>
+  
+  
+</body>
+</html>

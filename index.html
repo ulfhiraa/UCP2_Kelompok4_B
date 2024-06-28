@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bookoo - Online Book Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      
+      /* NAVBAR HOME, ABOUT, CONTACT*/
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .site-navbar {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .site-navbar .site-navbar-top {
+        padding: 20px 0;
+      }
+      
+      .site-navbar .site-logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      
+      .site-navbar .site-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .site-navbar .site-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+      }
+      
+      .site-navbar .site-menu li {
+        display: inline-block; /* Menjadikan menu sejajar */
+        margin-right: 5px; /* Jarak antar menu */
+        position: relative;
+      }
+      
+      .site-navbar .site-menu li a {
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover {
+        color: #555;
+      }
+      
+      .site-navbar .site-menu li.active a,
+      .site-navbar .site-menu li a:active {
+        color: #f00;
+      }
+      
+      .site-navbar .site-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        transition: width 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover::after,
+      .site-navbar .site-menu li.active a::after {
+        width: 100%;
+      }
+      
+      /*NAVBAR STICKY END*/
+      
+
+    /* Efek untuk tautan yang aktif */
+    .menu-link.active::after {
+      width: 100%; /* Panjang garis bawah saat aktif */
+    }
+
+    
+      /*VIDEO */
+    /* Container for the video background */
+    .video-background-container {
+      position: relative;
+      width: 100%;
+      height: 80vh; /* Adjust this value to control the height of the video container */
+      overflow: hidden;
+    }
+
+    /* The video element */
+    .video-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover; /* Ensure the video covers the entire container */
+    }
+
+    /* Overlay to position the content */
+    .video-overlay {
+      position: absolute;
+      bottom: 20px; /* Adjust as needed to position the button above the bottom of the screen */
+      width: 100%;
+      text-align: center; /* Center the button horizontally */
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Content inside the overlay */
+    .video-overlay .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Style for the button */
+    .video-overlay .btn {
+      margin-top: 10px; /* Adjust as needed to add space between content and button */
+    }
+
+    
+    /*Video END*/
+    
+      /*CARD BUKU*/
+      .image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .block-4-image img,
+        .block-2-item .image img {
+          height: 400px; /* Sesuaikan tinggi gambar sesuai kebutuhan */
+          object-fit: cover; /* Untuk memastikan gambar terisi sepenuhnya */
+      }
+
+      .block-2-item .text h3 {
+        font-size: 22px !important; /* Ukuran teks yang disesuaikan */
+      }
+
+      .block-2-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%; /* Pastikan tinggi elemen sesuai kebutuhan */
+      }
+
+      .block-2-item .image {
+        margin-bottom: 15px; /* Atur jarak antara gambar dan teks */
+      }
+
+    /*CARD BUKU END*/
+
+    /*FOOTER BOX*/
+    .footer-box {
+      background-color: #e8eaec; /* Warna latar belakang */
+      padding: 30px 0; /* Padding atas dan bawah */
+      margin-top: 30px; /* Jarak dari konten di atasnya */
+    }
+    /*FOOTER BOX END*/
+
+    /*FOOTER COPYRIGHT*/
+
+    /*FOOTER COPYRIGHT END*/
+    
+    </style>
+  </head>
+  <body>
+  
+  <!--Navbar Sticky Start [LOGO, HOME, ABOUT, CONTACT]-->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">E-Bookoo</a>
+            </div>
+          </div>
+
+          <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <div class="container">
+                <ul class="site-menu js-clone-nav d-none d-md-block">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Navbar End-->
+
+    <!-- Video Introduction Start -->
+    <div class="video-background-container">
+      <video class="video-background" loop autoplay muted preload="auto" poster="video-thumbnail.jpg">
+        <source src="images/bookoo.mp4" type="video/mp4">
+      </video>
+          <div class="video-overlay">
+              <div class="content" style="position: relative; top: -80px;">
+                  <a href="about.html" class="btn btn-light py-2 px-3" style="background-color: transparent; color: white; border: 2px solid white;">ABOUT</a>
+              </div>
+          </div>                         
+      </div>
+    </div>
+    <!-- Video Introduction End -->
+
+    <!-- Additional Content Start -->
+    <div id="about" class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+          <div class="site-blocks-cover" style="background-image: url(images/bookoo-bg.png);" data-aos="fade">
+            <div class="container">
+              <div class="row align-items-start align-items-md-center justify-content-end">
+                <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
+                  <h2 class="mb-2">
+                    50% off on all items
+                  </h2>
+                  <div class="intro-text text-center text-md-left">
+                    <p>
+                      Jangan lewatkan penjualan eksklusif kami di mana Anda bisa mendapatkan diskon 50% untuk semua item baik kategori fiksi atau nonfiksi. 
+                    </p>
+                    <p>
+                      Sekarang adalah waktu yang tepat untuk menyimpan bacaan favorit Anda. Jelajahi dan nikmati penghematan besar hari ini!
+                    </p>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Your additional content goes here -->
+        </div>
+      </div>
+    </div>
+    <!-- Additional Content End -->
+
+    <!--BOOK CARD, PARAGRAPH START-->
+    <div class="site-section block-3 site-blocks-2 bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 site-section-heading text-center pt-4">
+            <h2>Produk Unggulan</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="nonloop-block-3 owl-carousel">
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/9786020649436_BERSYUKUR_TANPA_LIBUR_HC.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Bersyukur Tanpa Libur</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.50.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/Cover_Setelah-dia-pergi.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Setelah Dia Pergi</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.63.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/Jedah_paling_Rumit.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Jeda Paling Rumit</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.71.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/pulang-pergi_tere_liye.jpeg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Pulang Pergi</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.90.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/9786026595973.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Berdamai Dengan Diri Sendiri</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.89.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="https://cdn.gramedia.com/uploads/items/Bumi_Dan_Lukanya.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Bumi Dan Lukanya</a></h3>
+                    <p class="mb-0"></p>
+                    <p class="text-primary font-weight-bold">Rp.80.000</p>
+                  </div>
+                </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Book Card, Paragraph END-->
+    
+    <!--CONTACT START-->    
+    <div class="site-section block-8">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="container">
+              <div class="row justify-content-center  mb-5">
+                <div class="col-md-7 site-section-heading text-center pt-4">
+                  <span class="icon-help"></span>
+                </div>
+              </div>
+              <div class="block-38-body text-center">
+                <p>
+                  Kami siap membantu Anda! Jangan ragu untuk menghubungi kami jika Anda memiliki pertanyaan atau komentar. 
+                </p>
+                <p>
+                  Tim kami di E-Bookoo selalu siap memberikan pelayanan terbaik untuk Anda.            
+                </p>
+                <p><a href="contact.html" class="btn btn-primary btn-sm">Get to know us</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--CONTACT END-->
+
+
+    <!--FOOTER START-->
+    <footer class="site-footer border-top" style="background-color: #e8eaec;">
+    
+      <div class="footer-box">
+
+        <div class="site-wrap">
+          <header class="site-navbar" role="banner">
+            <div class="site-navbar-top">
+              <div class="container">
+                <div class="row align-items-center">
+      
+                  <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                    <form action="" class="site-block-top-search">
+                      <div class="site-logo">
+                        <a href="index.html" class="js-logo-clone">E-BOOKOO</a>
+                      </div>
+                    </form>
+                  </div>
+      
+                  <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                    <nav class="site-navigation text-right text-md-center" role="navigation">
+                      <!-- Navigation Links-->
+                      <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                        <ul class="list-unstyled">
+                          <li><a href="index.html">HOME</a></li>
+                          <li><a href="about.html">ABOUT</a></li>
+                          <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+      
+                  <!--Contact Info & Sosial Media Links-->
+                  <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                    <div class="site-top-icons">
+                      <ul>
+                        <p><a href="mailto:ebookoo@gmail.com">Ebookoo@gmail.com</a></p>
+                        <p><a href="https://wa.me/628123456789">+628-123-456-789</a></p>
+                        <li>
+                          <a href="https://www.facebook.com/yourpage" class=""><span class="icon-facebook"></span></a>
+                          <a href="https://www.twitter.com/yourpage" class=""><span class="icon-twitter"></span></a>
+                          <a href="https://www.instagram.com/yourpage" class=""><span class="icon-instagram"></span></a>
+                        </li>
+                      </ul>
+                    </div> 
+                  </div>  
+                </div>
+
+                  <!--COPYRIGHT-->
+                  <div class="row pt-5 mt-5 text-center">
+                    <div class="col-md-12">
+                      <p>
+                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                      Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+
+                      </script><script>document.write(new Date().getFullYear());</script> All rights reserved | Kelompok 4 - PDW - B <i class="icon-heart" aria-hidden="true"></i> 
+                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                      </p>
+                  </div>
+                  
+              </div>
+            </div>
+          </div> 
+      </div>
+    </footer>
+    <!--FOOTER END-->
+  
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $('.nonloop-block-3').owlCarousel({
+        center: false,
+        items: 6,
+        loop: false,
+        margin: 20,
+        autoplay: true,
+        nav: true,
+        dots: true,
+        responsive:{
+          600:{
+            items: 6
+          }
+        }
+      });
+    });
+  </script>
+  </body>
+</html>

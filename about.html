@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bookoo - Online Book Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+      
+      /* NAVBAR HOME, ABOUT, CONTACT*/
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .site-navbar {
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .site-navbar .site-navbar-top {
+        padding: 20px 0;
+      }
+      
+      .site-navbar .site-logo {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      
+      .site-navbar .site-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .site-navbar .site-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+      }
+      
+      .site-navbar .site-menu li {
+        display: inline-block; /* Menjadikan menu sejajar */
+        margin-right: 5px; /* Jarak antar menu */
+        position: relative;
+      }
+      
+      .site-navbar .site-menu li a {
+        position: relative;
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover {
+        color: #555;
+      }
+      
+      .site-navbar .site-menu li.active a,
+      .site-navbar .site-menu li a:active {
+        color: #f00;
+      }
+      
+      .site-navbar .site-menu li a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: rgb(0, 0, 0);
+        transition: width 0.3s ease;
+      }
+      
+      .site-navbar .site-menu li a:hover::after,
+      .site-navbar .site-menu li.active a::after {
+        width: 100%;
+      }
+      
+      /*NAVBAR STICKY END*/
+
+    /* Efek untuk tautan yang aktif */
+    .menu-link.active::after {
+      width: 100%; /* Panjang garis bawah saat aktif */
+    }
+    .icon{
+        font-size: 2rem; /* Sesuaikan ukuran sesuai kebutuhan Anda */
+    }
+    </style>
+  </head>
+  <body>
+
+  <!--Navbar Sticky Start [LOGO, HOME, ABOUT, CONTACT]-->
+  <header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+            <div class="site-logo">
+              <a href="index.html" class="js-logo-clone">E-Bookoo</a>
+            </div>
+          </div>
+          <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+            <nav class="site-navigation text-right text-md-center" role="navigation">
+              <div class="container">
+                <ul class="site-menu js-clone-nav d-none d-md-block">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="active"><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--Navbar End-->
+
+  <header>
+    <div class="site-blocks-cover" style="background-image: url(images/bg.png);" data-aos="fade">
+      <div class="container">
+        <div class="row align-items-start align-items-md-center justify-content-end">
+          <div class="col-md-12 text-center text-md-left pt-5 pt-md-0">
+            <h1 class="mb-2">About Our Shop</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-product">
+      <div class="row align-items-center">
+          <div class="col-md-4 mb-4">
+            <img src="images/Melangkah.jpeg" alt="Item 1" class="img-fluid img-border" data-toggle="modal" data-target="#item1Modal">
+            <p class="mt-2" data-toggle="modal" data-target="#item1Modal"><b>Melangkah</b></p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://cdn.gramedia.com/uploads/images/1/29306/big_covers/ID_HCO2015MTH12OCAT.jpeg" alt="Item 2" class="img-fluid img-border" data-toggle="modal" data-target="#item2Modal">
+            <p class="mt-2" data-toggle="modal" data-target="#item2Modal"><b>On Cats</b></p>
+          </div>
+          <div class="col-md-4 mb-4">
+              <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/6/8/gd6zdaiibckvxqjv4cqj2k.jpg" alt="Item 3" class="img-fluid img-border" data-toggle="modal" data-target="#item3Modal">
+              <p class="mt-2" data-toggle="modal" data-target="#item3Modal"><b>Anak Kecil Yang Kehilangan Pundaknya</b></p>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-md-4 mb-4">
+            <img src="https://cdn.gramedia.com/uploads/picture_meta/2024/6/14/5k4xfmam7daqkbqfhajf6w.jpg" alt="Item 5" class="img-fluid img-border" data-toggle="modal" data-target="#item4Modal">
+            <p class="mt-2" data-toggle="modal" data-target="#item4Modal"><b>A Lovely Thing Called Hope</b></p>
+        </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://cdn.gramedia.com/uploads/items/9786020337647_harry-potter-dan-batu-bertuah-cover-baru.jpg" alt="Item 4" class="img-fluid img-border" data-toggle="modal" data-target="#item5Modal">
+            <p class="mt-2" data-toggle="modal" data-target="#item5Modal"><b>Harry Potter Dan Batu Bertuah</b></p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <img src="https://cdn.gramedia.com/uploads/items/Picture1_TrItOYY.png" alt="Item 6" class="img-fluid img-border" data-toggle="modal" data-target="#item6Modal">
+            <p class="mt-2" data-toggle="modal" data-target="#item6Modal"><b>Kitalah yang Ada di Sini Sekarang</b></p>
+          </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="item1Modal" tabindex="-1" role="dialog" aria-labelledby="item1ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="item1ModalLabel">Melangkah</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <img src="https://cdn.gramedia.com/uploads/items/9786020523316_Melangkah_UV_Spot_R4-1.jpg" alt="Item 1" class="img-fluid img-size">
+                  <p class="mt-2">Novel karya J. S Khairen yang berjudul Melangkah bertemakan tentang petualangan di Indonesia.
+                    Tidak hanya itu, cerita dalam novel ini juga mengutamakan kisah pahlawan. 
+                    Berbeda dari karya-karya yang sebelumnya, di novel ini Khairen memberi 
+                    sedikit imajinasi yang ia tanamkan. Terdapat 36 episode dan 5 babak.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="item2Modal" tabindex="-1" role="dialog" aria-labelledby="item2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="item2ModalLabel">On Cats</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <img src="https://cdn.gramedia.com/uploads/images/1/29306/big_covers/ID_HCO2015MTH12OCAT.jpeg" alt="Item 2" class="img-fluid img-size">
+                  <p class="mt-2">A raw and tenderly funny look at the human-cat relationship, from one of our most treasured and transgressive writers.
+                    Felines touched a vulnerable spot in Charles Bukowski's crusty soul. For the writer,
+                    there was something majestic and elemental about these inscrutable creatures he admired, sentient beings whose searing gaze
+                      could penetrate deep into our being. Bukowski considered cats to be unique forces of nature, 
+                      elusive emissaries of beauty and love.</p>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="item3Modal" tabindex="-1" role="dialog" aria-labelledby="item3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="item3ModalLabel">Anak Kecil Yang Kehilangan Pundaknya</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/6/8/gd6zdaiibckvxqjv4cqj2k.jpg" alt="Item 3" class="img-fluid img-size">
+                    <p class="mt-2">Dalam menulis buku ini, akan kuperkenalkan sosok anak laki-laki kecil yang suka bermain di pinggir pantai. 
+                      la bungsu tapi ia tidak pernah menamai dirinya bungsu, karena baginya, di bagian mana saja kita lahir di sana isinya tanggung jawab masing-masing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="item4Modal" tabindex="-1" role="dialog" aria-labelledby="item4ModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="item4ModalLabel">A Lovely Thing Called Hope</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://cdn.gramedia.com/uploads/picture_meta/2024/6/14/5k4xfmam7daqkbqfhajf6w.jpg" alt="Item 4" class="img-fluid img-size">
+                    <p class="mt-2">Khanza pikir, setelah lulus kuliah, ia akan segera mendapat pekerjaan. Namun, kenyataan memang kerap tak seindah harapan. 
+                      Terdesak oleh kebutuhan biaya karena sang ayah jatuh sakit, kesempatan untuk Khanza akhirnya datang dengan menerima tawaran menjadi pengasuh dari anak mantan 
+                      pacarnya Najendra Tristan Pradipta..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="item5Modal" tabindex="-1" role="dialog" aria-labelledby="item5ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="item5ModalLabel">Harry Potter Dan Batu Bertuah</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <img src="https://cdn.gramedia.com/uploads/items/9786020337647_harry-potter-dan-batu-bertuah-cover-baru.jpg" alt="Item 5" class="img-fluid img-size">
+                  <p class="mt-2">Seumur hidup, Harry Potter tidak pernah berurusan dengan sihir. Dia tinggal bersama keluarga Dursley yang kejam dan Dudley, 
+                    putra mereka yang menyebalkan. Kamar Harry cuma lemari sempit di kolong tangga, dan selama sebelas tahun, ulang tahunnya tak pernah dirayakan. Namun, 
+                    tiba-tiba datang burung hantu membawa surat misterius: surat berisi undangan ke tempat menakjubkan bernama Sekolah Sihir Hogwarts. Dan di sana bukan 
+                    hanya ada banyak teman, pertandingan olahraga naik sapu terbang, dan sihir dalam segala hal dari pelajaran sampai makanan tapi juga ada takdir luar biasa 
+                    yang sudah lama menantinya. Jika Harry mampu bertahan hidup.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="item6Modal" tabindex="-1" role="dialog" aria-labelledby="item6ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="item6ModalLabel">Kitalah yang Ada di Sini Sekarang</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <img src="https://cdn.gramedia.com/uploads/items/Picture1_TrItOYY.png" alt="Item 6" class="img-fluid img-size">
+                  <p class="mt-2">“Bacaan bagus untuk generasi milenial, menjelaskan alasan kehidupan ini tetaplah ajaib, meskipun kini 
+                    sains seolah-olah bisa menjelaskan segalanya. Percaya, harapan, dan kasih sayang tetaplah hal utama bagi masa depan manusia.”
+                     — Prof. Dr. Bambang Sugiharto, Pakar Filsafat.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </header>
+
+    <header>
+      <div class="container">
+        <h1>OUR SHOP</h1>
+        <p>e-bookoo adalah toko online kami yang spesialis dalam penjualan buku. 
+          Kami menawarkan berbagai macam judul buku dari berbagai genre, mulai dari fiksi hingga 
+          non-fiksi, yang dapat memenuhi berbagai minat dan kebutuhan pembaca. Dengan layanan kami, 
+          Anda dapat dengan mudah menemukan dan membeli buku-buku terbaru dan paling populer tanpa 
+          meninggalkan kenyamanan rumah Anda.ini adalah online store kami</p>
+    </header>
+
+    <div class="container mt-5">
+      <div class="row">
+          <!-- Kolom pertama dengan dua baris dan dua kolom di setiap baris -->
+          <div class="col-md-6">
+              <div class="row mb-4">
+                  <div class="col-md-6 d-flex" data-aos="fade-up" data-aos-delay="">
+                      <div class="icon mr-4 align-self-start">
+                          <span class="icon-truck"></span>
+                      </div>
+                      <div class="text">
+                          <h2 class="text-uppercase">Free Shipping</h2>
+                          <p>Nikmati pengiriman gratis untuk setiap pembelian buku di E-bookoo, tanpa minimum pembelian.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                      <div class="icon mr-4 align-self-start">
+                          <span class="icon-refresh2"></span>
+                      </div>
+                      <div class="text">
+                          <h2 class="text-uppercase">Free Returns</h2>
+                          <p>Belanja tanpa khawatir dengan kebijakan pengembalian gratis kami dalam waktu 30 hari.</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- Baris kedua di kolom pertama -->
+              <div class="row">
+                  <div class="col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+                      <div class="icon mr-4 align-self-start">
+                          <span class="icon-help"></span>
+                      </div>
+                      <div class="text">
+                          <h2 class="text-uppercase">Customer Support</h2>
+                          <p>Tim dukungan pelanggan kami siap membantu Anda 24/7 untuk setiap pertanyaan atau masalah.</p>
+                      </div>
+                  </div>
+                  <div class="col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+                      <div class="icon mr-4 align-self-start">
+                          <span class="icon-star"></span>
+                      </div>
+                      <div class="text">
+                          <h2 class="text-uppercase">High Quality</h2>
+                          <p>Kami menawarkan buku-buku berkualitas tinggi yang terjamin keasliannya dan kondisi terbaik.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Kolom kedua untuk gambar -->
+          <div class="col-md-6 container-imgbottom">
+              <div class="row">
+                  <div class="col-md-12 mb-4" data-aos="fade-up" data-aos-delay="400">
+                      <img src="https://i.pinimg.com/564x/29/46/63/294663312a46c6b9459594a0d5466397.jpg" alt="image" class="img-fluid img-bottom">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--FOOTER START-->
+  <footer class="site-footer border-top" style="background-color: #e8eaec;">
+    
+    <div class="footer-box">
+
+      <div class="site-wrap">
+        <header class="site-navbar" role="banner">
+          <div class="site-navbar-top">
+            <div class="container">
+              <div class="row align-items-center">
+    
+                <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                  <form action="" class="site-block-top-search">
+                    <div class="site-logo">
+                      <a href="index.html" class="js-logo-clone">E-BOOKOO</a>
+                    </div>
+                  </form>
+                </div>
+    
+                <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                  <nav class="site-navigation text-right text-md-center" role="navigation">
+                    <!-- Navigation Links-->
+                    <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                      <ul class="list-unstyled">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+    
+                <!--Contact Info & Sosial Media Links-->
+                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                  <div class="site-top-icons">
+                    <ul>
+                      <p><a href="mailto:ebookoo@gmail.com">Ebookoo@gmail.com</a></p>
+                      <p><a href="https://wa.me/628123456789">+628-123-456-789</a></p>
+                      <li>
+                        <a href="https://www.facebook.com/yourpage" class=""><span class="icon-facebook"></span></a>
+                        <a href="https://www.twitter.com/yourpage" class=""><span class="icon-twitter"></span></a>
+                        <a href="https://www.instagram.com/yourpage" class=""><span class="icon-instagram"></span></a>
+                      </li>
+                    </ul>
+                  </div> 
+                </div>  
+              </div>
+
+                <!--COPYRIGHT-->
+                <div class="row pt-5 mt-5 text-center">
+                  <div class="col-md-12">
+                    <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+
+                    </script><script>document.write(new Date().getFullYear());</script> All rights reserved | Kelompok 4 - PDW - B <i class="icon-heart" aria-hidden="true"></i> 
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+                
+            </div>
+          </div>
+        </div> 
+    </div>
+  </footer>
+  <!--FOOTER END-->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  </body>
+</html>
